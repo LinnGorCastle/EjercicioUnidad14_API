@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ejercicio Unidad 6</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body class="bodypersonalizado">
+  <h1>Ejercicio practico unidad 6<br>Programacion BackEnd con JavaScript</h1>
+
+  <div class="contenedorpaginas">
+    <ul class="nav nav-tabs" id="tabMenu">
+      <li class="nav-item">
+        <a class="nav-link active" id="doctoresTab" data-toggle="tab" href="#doctores">Doctores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pacientesTab" data-toggle="tab" href="#pacientes">Pacientes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="citasMedicasTab" data-toggle="tab" href="#citasMedicas">Citas Médicas</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="tabContent">
+      <!-- Contenido de la pestaña para el registro de Doctores -->
+      <div class="tab-pane fade show active" id="doctores">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Registro de Doctores</h2>
+          </div>
+        </div>
+        <div>
+          <form id="doctorForm">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="nombre">Nombre:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" id="nombre" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="apellido">Apellido:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" id="apellido" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="especialidad">Especialidad:</label>
+                  </div>
+                  <div clas="col-md-8">
+                    <select id="especialidad" required>
+                      <option value="">Seleccione una especialidad</option>
+                      <option value="medicina_general">Medicina general</option>
+                      <option value="cardiologia">Cardiología</option>
+                      <option value="medicina_interna">Medicina interna</option>
+                      <option value="dermatologia">Dermatología</option>
+                      <option value="rehabilitacion_fisica">Rehabilitación física</option>
+                      <option value="psicologia">Psicología</option>
+                      <option value="odontologia">Odontología</option>
+                      <option value="radiologia">Radiología</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="consultorio">Consultorio:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" id="consultorio" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="correo">Correo de contacto:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="email" id="correo" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-success"
+                  title="Almacena la información del doctor registrado">Agregar Doctor</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            <button id="descargarDoctores" class="btn btn-primary"
+              title="Decargar el listado de doctores registrados hasta el momento">Descargar Listado Doctores</button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Listado de Doctores</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div id="listaDoctores"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pestaña para el registro de pacientes-->
+      <div class="tab-pane fade" id="pacientes">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Registro de Pacientes</h2>
+          </div>
+        </div>
+        <div>
+          <form id="pacienteForm">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="nombrePaciente">Nombre:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" id="nombrePaciente" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="apellidoPaciente">Apellido:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" id="apellidoPaciente" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="cedulaPaciente">Número de Cédula:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="text" id="cedulaPaciente" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="edad">Edad:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="number" id="edad" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="telefono">Teléfono:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <input type="tel" id="telefono" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <button type="submit" class="btn btn-success" title="Almacena la información del paciente">Agregar
+                      Paciente</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <button id="descargarPacientes" class="btn btn-primary"
+              title="Decargar el listado de Pacientes registrados hasta el momento">Descargar Listado Pacientes</button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Listado de Pacientes</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div id="listaPacientes"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="citasMedicas">
+        <!-- Contenido de las citas médicas -->
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Registro de citas médicas</h2>
+          </div>
+        </div>
+        <div>
+          <form id="citaMedicaForm">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="nombre">Seleccione un paciente:</label>
+                  </div>
+                  <div class="col-md-8">
+                    <select id="listaPacientes" required>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="especialidad">Especialidad:</label>
+                  </div>
+                  <div clas="col-md-8">
+                    <select id="listaEspecialidades" required>
+                      <option value="">Seleccione una especialidad</option>
+                      <option value="medicina general">Medicina general</option>
+                      <option value="cardiologia">Cardiología</option>
+                      <option value="medicina interna">Medicina interna</option>
+                      <option value="dermatologia">Dermatología</option>
+                      <option value="rehabilitacion fisica">Rehabilitación física</option>
+                      <option value="psicologia">Psicología</option>
+                      <option value="odontologia">Odontología</option>
+                      <option value="radiologia">Radiología</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <label for="DoctorEspecialidad">Doctores registrados a la especialidad:</label>
+                  </div>
+                  <div clas="col-md-8">
+                    <select id="listaDoctores" required>
+                      <option value="">Seleccione un doctor</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="submit" class="btn btn-success" title="Almacena la cita médica">guardar cita médica</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <hr>
+
+        <div class="row">
+          <div class="col-md-6">
+            <button id="descargarCitasMedicas" class="btn btn-primary"
+              title="Decargar el listado de citas médicas registradas hasta el momento">Descargar Citas Medicas</button>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Listado de Citas Médicas</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div id="listaCitasMedicas"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

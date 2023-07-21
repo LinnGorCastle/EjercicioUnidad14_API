@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .bodypersonalizado{
+    background-color: rgba(18, 153, 215, 0.693);
+    
+  }
+  
+  .contenedorpaginas{
+    background-color: #fff;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  h2{
+    margin-left: 5px;
+    margin-top: 40px;
+    text-decoration: underline;
+    font-style: italic;
+  }
+  
+  form {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input,
+  select   {
+    margin-top: 5px;
+    width: 100%;
+  }
+  
+  select{
+    width: auto;
+  }
+  
+  form{
+    background-color: rgb(242, 233, 232);
+    padding: 10px;
+  }
